@@ -1,0 +1,107 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{xurl}
+
+\geometry{top=1.3cm, bottom=1.3cm, left=1.4cm, right=1.4cm}
+\setcounter{secnumdepth}{0}
+\setlist[itemize]{
+    leftmargin=1.1em,
+    itemsep=0.18em,
+    topsep=0.2em,
+    parsep=0em,
+    partopsep=0em
+}
+\pagestyle{empty}
+
+\hypersetup{
+    pdftitle={Breno Juan de Oliveira Pinto - Data Engineer / Data Analyst},
+    pdfauthor={Breno Juan de Oliveira Pinto},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    bookmarksdepth=2
+}
+
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0em}
+{}
+[\titlerule\vspace{0.4ex}]
+\titlespacing*{\section}{0pt}{0.7em}{0.35em}
+
+\newcounter{cventry}
+\newcommand{\cventry}[4]{%
+    \refstepcounter{cventry}%
+    \phantomsection%
+    \pdfbookmark[2]{#1}{cventry-\thecventry}%
+    \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}X@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+    \end{tabularx}
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Breno Juan de Oliveira Pinto}} \\
+    \vspace{0.1cm}
+    Data Engineer \textbar{} Data Analyst \\
+    \vspace{0.1cm}
+    Sao Paulo, Brazil
+    {\textbullet}
+    \href{mailto:brenojuandeoliveirapinto@gmail.com}{brenojuandeoliveirapinto@gmail.com}
+    {\textbullet}
+    \href{https://www.linkedin.com/in/brenool1veira}{linkedin.com/in/brenool1veira}
+    {\textbullet}
+    \href{https://portfolio-breno-oliveira.netlify.app}{portfolio-breno-oliveira.netlify.app}
+\end{center}
+
+\section{Professional Summary}
+Data professional with hands-on experience building ETL/ELT routines, automating business processes, integrating enterprise systems, and structuring data for reporting and analysis. Strong background in SQL, Python, C\#, REST/SOAP APIs, Data Warehouse concepts, and Power BI, with practical experience supporting ERP environments such as TOTVS Protheus and TOTVS RM. Focused on turning operational data into reliable pipelines, business visibility, and actionable insights for Finance, Accounting, Purchasing, Inventory, HR, and shared services teams.
+
+\section{Experience}
+\cventry{JOFEGE}{Brazil}{Systems Analyst}{Apr 2022 -- Present}
+\begin{itemize}
+    \item Build and maintain ETL/ELT routines, integrations, and data flows that support analytics and operational processes across ERP ecosystems.
+    \item Develop automation solutions and data processing scripts using SQL, Python, and C\# to reduce manual work and improve consistency in recurring activities.
+    \item Integrate internal and external systems through REST APIs, SOAP services, and TOTVS RM web services, improving data exchange between business applications.
+    \item Support data and process demands in Finance, Accounting, Purchasing, Inventory, HR, and Global Services, connecting business rules with technical implementation.
+    \item Create and support dashboards, reports, and data structures used for monitoring, decision-making, and business visibility.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Data Engineering:} ETL/ELT, data pipelines, data integration, data modeling, Data Warehouse, Data Lake, process automation
+    \item \textbf{Programming:} SQL, T-SQL, Python, C\#
+    \item \textbf{Databases:} Oracle, MySQL, NoSQL, relational and non-relational data querying and manipulation
+    \item \textbf{Analytics \& BI:} Power BI, dashboard creation, reporting, data visualization
+    \item \textbf{Integration:} REST APIs, SOAP, system integration, TOTVS RM web services
+    \item \textbf{ERP Domain:} TOTVS Protheus, TOTVS RM, financial and back-office process support
+\end{itemize}
+
+\section{Education}
+\cventry{Federal University of Rio de Janeiro}{Brazil}{MBA in Data Engineering}{Ongoing}
+\cventry{Universidade Sao Francisco}{Brazil}{Postgraduate Degree in Data Science}{Completed}
+\cventry{Universidade Sao Francisco}{Brazil}{Technologist Degree in Systems Analysis and Development}{Completed}
+
+\section{Languages}
+\begin{itemize}
+    \item \textbf{Portuguese:} Native
+    \item \textbf{English:} Advanced
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{xurl}
+
+\geometry{top=1.3cm, bottom=1.3cm, left=1.4cm, right=1.4cm}
+\setcounter{secnumdepth}{0}
+\setlist[itemize]{
+    leftmargin=1.1em,
+    itemsep=0.18em,
+    topsep=0.2em,
+    parsep=0em,
+    partopsep=0em
+}
+\pagestyle{empty}
+
+\hypersetup{
+    pdftitle={Breno Juan de Oliveira Pinto - Engenheiro de Dados / Analista de Dados},
+    pdfauthor={Breno Juan de Oliveira Pinto},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    bookmarksdepth=2
+}
+
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0em}
+{}
+[\titlerule\vspace{0.4ex}]
+\titlespacing*{\section}{0pt}{0.7em}{0.35em}
+
+\newcounter{cventry}
+\newcommand{\cventry}[4]{%
+    \refstepcounter{cventry}%
+    \phantomsection%
+    \pdfbookmark[2]{#1}{cventry-\thecventry}%
+    \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}X@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+    \end{tabularx}
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Breno Juan de Oliveira Pinto}} \\
+    \vspace{0.1cm}
+    Engenheiro de Dados \textbar{} Analista de Dados \\
+    \vspace{0.1cm}
+    Sao Paulo, Brasil
+    {\textbullet}
+    \href{mailto:brenojuandeoliveirapinto@gmail.com}{brenojuandeoliveirapinto@gmail.com}
+    {\textbullet}
+    \href{https://www.linkedin.com/in/brenool1veira}{linkedin.com/in/brenool1veira}
+    {\textbullet}
+    \href{https://portfolio-breno-oliveira.netlify.app}{portfolio-breno-oliveira.netlify.app}
+\end{center}
+
+\section{Resumo Profissional}
+Profissional de dados com experiencia pratica na construcao de rotinas ETL/ELT, automacao de processos, integracao de sistemas corporativos e estruturacao de dados para relatorios e analises. Atuo com SQL, Python, C\#, APIs REST/SOAP, conceitos de Data Warehouse e Power BI, com experiencia direta em ambientes ERP como TOTVS Protheus e TOTVS RM. Meu foco esta em transformar dados operacionais em pipelines confiaveis, visibilidade de negocio e insumos acionaveis para areas como Financeiro, Contabilidade, Compras, Estoque, RH e servicos compartilhados.
+
+\section{Experiencia}
+\cventry{JOFEGE}{Brasil}{Analista de Sistemas}{Abr 2022 -- Atual}
+\begin{itemize}
+    \item Desenvolvo e mantenho rotinas de ETL/ELT, integracoes e fluxos de dados que apoiam necessidades analiticas e processos operacionais no ecossistema ERP.
+    \item Crio solucoes de automacao e scripts de processamento de dados com SQL, Python e C\# para reduzir atividades manuais e aumentar a consistencia das operacoes recorrentes.
+    \item Integro sistemas internos e externos por meio de APIs REST, servicos SOAP e web services do TOTVS RM, melhorando a troca de dados entre aplicacoes.
+    \item Atendo demandas de dados e processos das areas Financeira, Contabil, Compras, Estoque, RH e Servicos Globais, conectando regras de negocio com implementacao tecnica.
+    \item Estruturo e apoio dashboards, relatorios e bases de dados voltados a acompanhamento, tomada de decisao e visibilidade operacional.
+\end{itemize}
+
+\section{Competencias Tecnicas}
+\begin{itemize}
+    \item \textbf{Engenharia de Dados:} ETL/ELT, pipelines de dados, integracao de dados, modelagem de dados, Data Warehouse, Data Lake, automacao de processos
+    \item \textbf{Programacao:} SQL, T-SQL, Python, C\#
+    \item \textbf{Bancos de Dados:} Oracle, MySQL, NoSQL, consulta e manipulacao de dados relacionais e nao relacionais
+    \item \textbf{Analytics \& BI:} Power BI, criacao de dashboards, relatorios, visualizacao de dados
+    \item \textbf{Integracao:} APIs REST, SOAP, integracao entre sistemas, web services do TOTVS RM
+    \item \textbf{Dominio ERP:} TOTVS Protheus, TOTVS RM, suporte a processos financeiros e backoffice
+\end{itemize}
+
+\section{Formacao Academica}
+\cventry{Universidade Federal do Rio de Janeiro}{Brasil}{MBA em Engenharia de Dados}{Em andamento}
+\cventry{Universidade Sao Francisco}{Brasil}{Pos-graduacao em Ciencia de Dados}{Concluido}
+\cventry{Universidade Sao Francisco}{Brasil}{Tecnologo em Analise e Desenvolvimento de Sistemas}{Concluido}
+
+\section{Idiomas}
+\begin{itemize}
+    \item \textbf{Portugues:} Nativo
+    \item \textbf{Ingles:} Avancado
+\end{itemize}
+
+\end{document}
