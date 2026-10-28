@@ -2,6 +2,11 @@ name: Build
 
 on:
   push:
+  workflow_dispatch:
+
+# Necessario para criar a release "latest" e enviar os PDFs.
+permissions:
+  contents: write
 
 jobs:
   generate-pdf:
@@ -23,7 +28,7 @@ jobs:
       - name: Build Portuguese Resume
         working-directory: resumes/pt-br
         run: pdflatex curriculo.tex
-      
+
       - name: Upload generated PDFs to GitHub Actions Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -31,3 +36,19 @@ jobs:
           path: |
             resumes/en/resume.pdf
             resumes/pt-br/curriculo.pdf
+
+      # O portfolio baixa os curriculos direto desta release, com nome fixo:
+      # https://github.com/BrenoOl1veira/resume-kit/releases/download/latest/<arquivo>.pdf
+      # Assim o download e instantaneo e sempre reflete o ultimo push na branch padrao.
+      - name: Publish PDFs to the "latest" release
+        if: github.ref_name == github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp resumes/en/resume.pdf breno-oliveira-resume-en.pdf
+          cp resumes/pt-br/curriculo.pdf breno-oliveira-curriculo-pt-br.pdf
+          gh release view latest >/dev/null 2>&1 || gh release create latest \
+            --title "Currículos mais recentes" \
+            --notes "PDFs gerados automaticamente a cada push na branch padrão." \
+            --latest
+          gh release upload latest breno-oliveira-resume-en.pdf breno-oliveira-curriculo-pt-br.pdf --clobber
